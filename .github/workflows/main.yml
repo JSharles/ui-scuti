@@ -7,18 +7,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['10.x', '12.x', '14.x', '16.x']
+        node: ['12.x', '14.x', '16.x']
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
       - name: Checkout repo
-      - uses: actions/checkout@v3
-        # pick the Node version to use and install it
-        # https://github.com/actions/setup-node
-        - uses: actions/setup-node@v3
-          with:
-            node-version: 16
-        - uses: bahmutov/npm-install@v1
+        uses: actions/checkout@v2
 
       - name: Use Node ${{ matrix.node }}
         uses: actions/setup-node@v1
