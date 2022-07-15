@@ -12,7 +12,13 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        # pick the Node version to use and install it
+        # https://github.com/actions/setup-node
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - uses: bahmutov/npm-install@v1
 
       - name: Use Node ${{ matrix.node }}
         uses: actions/setup-node@v1
