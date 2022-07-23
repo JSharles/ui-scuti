@@ -1,15 +1,23 @@
 import React, { FC, HTMLAttributes } from 'react';
-//import './Page.style.css';
+import styled from 'styled-components';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   /** prop description goes here */
 }
 
 export const Page: FC<Props> = props => {
+
+  const Wrapper = styled.div`
+display: flex;
+flex: 1;
+  background: #fffff02d;
+  border: 1pt solid red;
+  `;
+
   return (
-    <div>
-      <p>Page</p>
-    </div>
+    <Wrapper>
+
+    </Wrapper>
   );
 };
 
